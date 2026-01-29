@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APIForge — AI-Powered APIs for Developers</title>
+  <meta name="description" content="Screenshot, scrape, extract, and generate PDFs with one API. Built for developers building AI products. 4x cheaper than alternatives.">
+  <meta property="og:title" content="APIForge — AI-Powered APIs for Developers">
+  <meta property="og:description" content="Screenshot, scrape, extract & generate PDFs with one API. Built for AI builders.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50:'#eef2ff',100:'#e0e7ff',200:'#c7d2fe',300:'#a5b4fc',400:'#818cf8',500:'#6366f1',600:'#4f46e5',700:'#4338ca',800:'#3730a3',900:'#312e81' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    code, .mono { font-family: 'JetBrains Mono', monospace; }
+    .gradient-text { background: linear-gradient(135deg, #6366f1, #8b5cf6, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .gradient-bg { background: linear-gradient(135deg, #6366f1, #4f46e5); }
+    .code-block { background: #1e1e2e; color: #cdd6f4; border-radius: 12px; }
+    .glow { box-shadow: 0 0 60px rgba(99, 102, 241, 0.15); }
+    .card-hover { transition: all 0.3s; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+  </style>
+</head>
+<body class="bg-white text-gray-900">
+
+  <!-- Nav -->
+  <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-lg border-b border-gray-100 z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="text-2xl">⚡</span>
+        <span class="text-xl font-bold">API<span class="gradient-text">Forge</span></span>
+      </div>
+      <div class="hidden md:flex items-center gap-8 text-sm text-gray-600">
+        <a href="#features" class="hover:text-gray-900 transition">Features</a>
+        <a href="#pricing" class="hover:text-gray-900 transition">Pricing</a>
+        <a href="#docs" class="hover:text-gray-900 transition">Docs</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="#waitlist" class="gradient-bg text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:opacity-90 transition">Get Early Access →</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="pt-32 pb-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 bg-brand-50 text-brand-700 px-4 py-1.5 rounded-full text-sm font-medium mb-6">
+        <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+        Now in Early Access
+      </div>
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6">
+        One API for<br><span class="gradient-text">Screenshot, Scrape<br>& AI Extract</span>
+      </h1>
+      <p class="text-xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
+        The developer toolkit for web data. Take screenshots, scrape clean content, extract structured data with AI, and generate PDFs. <strong class="text-gray-700">4x cheaper than Firecrawl.</strong>
+      </p>
+
+      <!-- Code example -->
+      <div class="code-block p-6 text-left max-w-2xl mx-auto mb-10 glow text-sm">
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-3 h-3 rounded-full bg-red-500"></div>
+          <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+          <div class="w-3 h-3 rounded-full bg-green-500"></div>
+          <span class="text-gray-500 text-xs ml-2 mono">example.ts</span>
+        </div>
+<pre class="mono text-[13px] leading-relaxed"><span style="color:#89b4fa">const</span> response = <span style="color:#89b4fa">await</span> <span style="color:#f9e2af">fetch</span>(<span style="color:#a6e3a1">'https://api.apiforge.dev/v1/extract'</span>, {
+  <span style="color:#cba6f7">method</span>: <span style="color:#a6e3a1">'POST'</span>,
+  <span style="color:#cba6f7">headers</span>: { <span style="color:#a6e3a1">'Authorization'</span>: <span style="color:#a6e3a1">`Bearer ${API_KEY}`</span> },
+  <span style="color:#cba6f7">body</span>: <span style="color:#f9e2af">JSON</span>.<span style="color:#f9e2af">stringify</span>({
+    <span style="color:#cba6f7">url</span>: <span style="color:#a6e3a1">'https://example.com/product'</span>,
+    <span style="color:#cba6f7">schema</span>: {
+      <span style="color:#cba6f7">name</span>: <span style="color:#a6e3a1">'string'</span>,
+      <span style="color:#cba6f7">price</span>: <span style="color:#a6e3a1">'number'</span>,
+      <span style="color:#cba6f7">reviews</span>: <span style="color:#a6e3a1">'number'</span>
+    }
+  })
+});
+
+<span style="color:#6c7086">// → { name: "Product X", price: 29.99, reviews: 142 }</span></pre>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#waitlist" class="gradient-bg text-white px-8 py-4 rounded-xl text-lg font-semibold hover:opacity-90 transition shadow-lg shadow-brand-500/25">
+          Join the Waitlist — It's Free
+        </a>
+        <a href="#features" class="text-gray-600 px-8 py-4 rounded-xl text-lg font-medium hover:text-gray-900 transition">
+          See Features ↓
+        </a>
+      </div>
+
+      <p class="text-sm text-gray-400 mt-6">100 free requests/month. No credit card required.</p>
+    </div>
+  </section>
+
+  <!-- Logos / Social proof -->
+  <section class="py-12 border-y border-gray-100 bg-gray-50/50">
+    <div class="max-w-4xl mx-auto text-center px-6">
+      <p class="text-sm text-gray-400 mb-6 uppercase tracking-wider font-medium">Built for developers who ship fast</p>
+      <div class="flex flex-wrap items-center justify-center gap-8 text-gray-300 text-2xl font-bold">
+        <span>Next.js</span>
+        <span>•</span>
+        <span>Python</span>
+        <span>•</span>
+        <span>Node.js</span>
+        <span>•</span>
+        <span>Go</span>
+        <span>•</span>
+        <span>Ruby</span>
+        <span>•</span>
+        <span>Any Language</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4">Everything you need.<br><span class="gradient-text">One API key.</span></h2>
+        <p class="text-gray-500 text-lg max-w-xl mx-auto">Stop juggling multiple services. APIForge bundles the essential web data APIs every developer needs.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Screenshot -->
+        <div class="card-hover bg-white border border-gray-200 rounded-2xl p-8">
+          <div class="text-4xl mb-4">📸</div>
+          <h3 class="text-xl font-bold mb-2">Screenshot API</h3>
+          <p class="text-gray-500 mb-4">Capture any URL as PNG, JPEG, or PDF. Full page, custom viewport, dark mode, and mobile support.</p>
+          <div class="code-block px-4 py-3 text-xs mono">
+            <span style="color:#89b4fa">POST</span> <span style="color:#a6e3a1">/v1/screenshot</span>
+          </div>
+          <p class="text-sm text-brand-600 font-medium mt-4">$0.005 / screenshot</p>
+        </div>
+
+        <!-- Scrape -->
+        <div class="card-hover bg-white border border-gray-200 rounded-2xl p-8">
+          <div class="text-4xl mb-4">🕷️</div>
+          <h3 class="text-xl font-bold mb-2">Scrape API</h3>
+          <p class="text-gray-500 mb-4">Get clean markdown or text from any URL. Renders JavaScript, removes clutter. Perfect for RAG pipelines.</p>
+          <div class="code-block px-4 py-3 text-xs mono">
+            <span style="color:#89b4fa">POST</span> <span style="color:#a6e3a1">/v1/scrape</span>
+          </div>
+          <p class="text-sm text-brand-600 font-medium mt-4">$0.01 / page</p>
+        </div>
+
+        <!-- AI Extract -->
+        <div class="card-hover bg-white border border-gray-200 rounded-2xl p-8 ring-2 ring-brand-500 relative">
+          <div class="absolute -top-3 left-6 bg-brand-500 text-white text-xs font-bold px-3 py-1 rounded-full">MOST POPULAR</div>
+          <div class="text-4xl mb-4">🧠</div>
+          <h3 class="text-xl font-bold mb-2">AI Extract API</h3>
+          <p class="text-gray-500 mb-4">Send a URL + JSON schema, get structured data back. AI-powered extraction that understands context.</p>
+          <div class="code-block px-4 py-3 text-xs mono">
+            <span style="color:#89b4fa">POST</span> <span style="color:#a6e3a1">/v1/extract</span>
+          </div>
+          <p class="text-sm text-brand-600 font-medium mt-4">$0.05 / extraction</p>
+        </div>
+
+        <!-- PDF -->
+        <div class="card-hover bg-white border border-gray-200 rounded-2xl p-8">
+          <div class="text-4xl mb-4">📄</div>
+          <h3 class="text-xl font-bold mb-2">PDF Generation</h3>
+          <p class="text-gray-500 mb-4">Convert HTML or URLs to beautiful PDFs. Perfect for invoices, reports, receipts, and contracts.</p>
+          <div class="code-block px-4 py-3 text-xs mono">
+            <span style="color:#89b4fa">POST</span> <span style="color:#a6e3a1">/v1/pdf</span>
+          </div>
+          <p class="text-sm text-brand-600 font-medium mt-4">$0.01 / PDF</p>
+        </div>
+
+        <!-- OG Image -->
+        <div class="card-hover bg-white border border-gray-200 rounded-2xl p-8">
+          <div class="text-4xl mb-4">🖼️</div>
+          <h3 class="text-xl font-bold mb-2">OG Image API</h3>
+          <p class="text-gray-500 mb-4">Generate dynamic Open Graph images from templates. Auto social cards for your blog, SaaS, or app.</p>
+          <div class="code-block px-4 py-3 text-xs mono">
+            <span style="color:#89b4fa">POST</span> <span style="color:#a6e3a1">/v1/og</span>
+          </div>
+          <p class="text-sm text-brand-600 font-medium mt-4">$0.005 / image</p>
+        </div>
+
+        <!-- Vision -->
+        <div class="card-hover bg-white border border-gray-200 rounded-2xl p-8">
+          <div class="text-4xl mb-4">👁️</div>
+          <h3 class="text-xl font-bold mb-2">AI Vision API</h3>
+          <p class="text-gray-500 mb-4">Extract structured data from images. OCR + AI understanding for documents, receipts, and more.</p>
+          <div class="code-block px-4 py-3 text-xs mono">
+            <span style="color:#89b4fa">POST</span> <span style="color:#a6e3a1">/v1/vision</span>
+          </div>
+          <p class="text-sm text-brand-600 font-medium mt-4">$0.05 / image</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison -->
+  <section class="py-24 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold mb-4">Why APIForge?</h2>
+        <p class="text-gray-500 text-lg">More value. Less cost. One integration.</p>
+      </div>
+
+      <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden">
+        <table class="w-full text-left">
+          <thead>
+            <tr class="bg-gray-50 border-b">
+              <th class="px-6 py-4 text-sm font-semibold text-gray-500">Feature</th>
+              <th class="px-6 py-4 text-sm font-semibold gradient-text">APIForge</th>
+              <th class="px-6 py-4 text-sm font-semibold text-gray-400">Firecrawl</th>
+              <th class="px-6 py-4 text-sm font-semibold text-gray-400">Others</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr>
+              <td class="px-6 py-4 text-sm">Web Scraping</td>
+              <td class="px-6 py-4 text-sm font-medium text-green-600">✓</td>
+              <td class="px-6 py-4 text-sm text-gray-400">✓</td>
+              <td class="px-6 py-4 text-sm text-gray-400">✓</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-sm">AI Extraction</td>
+              <td class="px-6 py-4 text-sm font-medium text-green-600">✓</td>
+              <td class="px-6 py-4 text-sm text-gray-400">✓</td>
+              <td class="px-6 py-4 text-sm text-gray-300">✗</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-sm">Screenshots</td>
+              <td class="px-6 py-4 text-sm font-medium text-green-600">✓</td>
+              <td class="px-6 py-4 text-sm text-gray-300">✗</td>
+              <td class="px-6 py-4 text-sm text-gray-400">Separate service</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-sm">PDF Generation</td>
+              <td class="px-6 py-4 text-sm font-medium text-green-600">✓</td>
+              <td class="px-6 py-4 text-sm text-gray-300">✗</td>
+              <td class="px-6 py-4 text-sm text-gray-400">Separate service</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-sm">AI Vision / OCR</td>
+              <td class="px-6 py-4 text-sm font-medium text-green-600">✓</td>
+              <td class="px-6 py-4 text-sm text-gray-300">✗</td>
+              <td class="px-6 py-4 text-sm text-gray-300">✗</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-sm">Price (2,000 pages)</td>
+              <td class="px-6 py-4 text-sm font-bold text-green-600">$9/mo</td>
+              <td class="px-6 py-4 text-sm text-gray-400">$76/mo</td>
+              <td class="px-6 py-4 text-sm text-gray-400">$49+/mo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="py-24 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4">Simple, transparent pricing</h2>
+        <p class="text-gray-500 text-lg">Start free. Scale as you grow. No surprises.</p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-6">
+        <!-- Free -->
+        <div class="bg-white border border-gray-200 rounded-2xl p-8">
+          <h3 class="text-lg font-bold mb-1">Free</h3>
+          <p class="text-gray-400 text-sm mb-4">For testing & side projects</p>
+          <div class="text-4xl font-extrabold mb-6">$0</div>
+          <ul class="space-y-3 text-sm text-gray-600 mb-8">
+            <li>✓ 100 requests/month</li>
+            <li>✓ All APIs included</li>
+            <li>✓ 10 req/min rate limit</li>
+            <li>✓ Community support</li>
+          </ul>
+          <a href="#waitlist" class="block text-center border border-gray-300 text-gray-700 px-6 py-3 rounded-xl font-medium hover:bg-gray-50 transition">Get Started</a>
+        </div>
+
+        <!-- Starter -->
+        <div class="bg-white border border-gray-200 rounded-2xl p-8">
+          <h3 class="text-lg font-bold mb-1">Starter</h3>
+          <p class="text-gray-400 text-sm mb-4">For indie hackers</p>
+          <div class="text-4xl font-extrabold mb-1">$9<span class="text-lg text-gray-400 font-normal">/mo</span></div>
+          <p class="text-xs text-gray-400 mb-6">or $0.005-0.05/request</p>
+          <ul class="space-y-3 text-sm text-gray-600 mb-8">
+            <li>✓ 2,000 requests/month</li>
+            <li>✓ All APIs included</li>
+            <li>✓ 60 req/min rate limit</li>
+            <li>✓ Email support</li>
+          </ul>
+          <a href="#waitlist" class="block text-center border border-gray-300 text-gray-700 px-6 py-3 rounded-xl font-medium hover:bg-gray-50 transition">Get Started</a>
+        </div>
+
+        <!-- Pro -->
+        <div class="bg-white border-2 border-brand-500 rounded-2xl p-8 relative glow">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-500 text-white text-xs font-bold px-4 py-1 rounded-full">POPULAR</div>
+          <h3 class="text-lg font-bold mb-1">Pro</h3>
+          <p class="text-gray-400 text-sm mb-4">For growing products</p>
+          <div class="text-4xl font-extrabold mb-1">$29<span class="text-lg text-gray-400 font-normal">/mo</span></div>
+          <p class="text-xs text-gray-400 mb-6">or $0.003-0.03/request</p>
+          <ul class="space-y-3 text-sm text-gray-600 mb-8">
+            <li>✓ 10,000 requests/month</li>
+            <li>✓ All APIs included</li>
+            <li>✓ 200 req/min rate limit</li>
+            <li>✓ Priority support</li>
+            <li>✓ Webhook callbacks</li>
+          </ul>
+          <a href="#waitlist" class="block text-center gradient-bg text-white px-6 py-3 rounded-xl font-medium hover:opacity-90 transition">Get Started</a>
+        </div>
+
+        <!-- Business -->
+        <div class="bg-white border border-gray-200 rounded-2xl p-8">
+          <h3 class="text-lg font-bold mb-1">Business</h3>
+          <p class="text-gray-400 text-sm mb-4">For scale</p>
+          <div class="text-4xl font-extrabold mb-1">$99<span class="text-lg text-gray-400 font-normal">/mo</span></div>
+          <p class="text-xs text-gray-400 mb-6">or $0.002-0.02/request</p>
+          <ul class="space-y-3 text-sm text-gray-600 mb-8">
+            <li>✓ 50,000 requests/month</li>
+            <li>✓ All APIs included</li>
+            <li>✓ 500 req/min rate limit</li>
+            <li>✓ Dedicated support</li>
+            <li>✓ SLA guarantee</li>
+            <li>✓ Custom integrations</li>
+          </ul>
+          <a href="#waitlist" class="block text-center border border-gray-300 text-gray-700 px-6 py-3 rounded-xl font-medium hover:bg-gray-50 transition">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Waitlist -->
+  <section id="waitlist" class="py-24 px-6 bg-gray-50">
+    <div class="max-w-xl mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-4">Get Early Access</h2>
+      <p class="text-gray-500 text-lg mb-8">Join the waitlist and be the first to try APIForge. Early adopters get <strong class="text-gray-700">3 months free on any paid plan.</strong></p>
+      
+      <form id="waitlist-form" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+        <input 
+          type="email" 
+          id="email-input"
+          placeholder="you@company.com" 
+          required
+          class="flex-1 px-5 py-4 rounded-xl border border-gray-300 text-base focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent"
+        >
+        <button 
+          type="submit"
+          class="gradient-bg text-white px-8 py-4 rounded-xl font-semibold text-base hover:opacity-90 transition whitespace-nowrap"
+        >
+          Join Waitlist
+        </button>
+      </form>
+      
+      <div id="success-message" class="hidden mt-4 text-green-600 font-medium">
+        🎉 You're on the list! We'll email you when we launch.
+      </div>
+      
+      <p class="text-sm text-gray-400 mt-4">No spam. We'll only email you about launch updates.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 px-6 border-t border-gray-100">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="text-xl">⚡</span>
+        <span class="font-bold">API<span class="gradient-text">Forge</span></span>
+      </div>
+      <div class="flex items-center gap-6 text-sm text-gray-400">
+        <a href="#features" class="hover:text-gray-600 transition">Features</a>
+        <a href="#pricing" class="hover:text-gray-600 transition">Pricing</a>
+        <a href="#docs" class="hover:text-gray-600 transition">Docs</a>
+        <a href="mailto:hello@apiforge.dev" class="hover:text-gray-600 transition">Contact</a>
+      </div>
+      <p class="text-sm text-gray-400">© 2026 APIForge. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Simple waitlist form handler
+    document.getElementById('waitlist-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email-input').value;
+      
+      // Store in localStorage for now (will connect to backend later)
+      const waitlist = JSON.parse(localStorage.getItem('apiforge_waitlist') || '[]');
+      waitlist.push({ email, date: new Date().toISOString() });
+      localStorage.setItem('apiforge_waitlist', JSON.stringify(waitlist));
+      
+      // Show success
+      document.getElementById('waitlist-form').classList.add('hidden');
+      document.getElementById('success-message').classList.remove('hidden');
+      
+      // TODO: Send to backend/email service
+      console.log('Waitlist signup:', email);
+    });
+  </script>
+
+</body>
+</html>
