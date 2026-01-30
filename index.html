@@ -326,11 +326,30 @@
     document.getElementById('waitlist-form').addEventListener('submit', async (e) => {
       e.preventDefault();
       const email = document.getElementById('email-input').value;
-      const waitlist = JSON.parse(localStorage.getItem('ironapi_waitlist') || '[]');
-      waitlist.push({ email, date: new Date().toISOString() });
-      localStorage.setItem('ironapi_waitlist', JSON.stringify(waitlist));
-      document.getElementById('waitlist-form').classList.add('hidden');
-      document.getElementById('success-message').classList.remove('hidden');
+      const btn = e.target.querySelector('button');
+      btn.textContent = 'Joining...';
+      btn.disabled = true;
+
+      try {
+        const res = await fetch('https://alfred.ngrok.pro/waitlist', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, source: 'ironapi.uk' })
+        });
+        const data = await res.json();
+        if (res.ok) {
+          document.getElementById('waitlist-form').classList.add('hidden');
+          document.getElementById('success-message').classList.remove('hidden');
+        } else {
+          btn.textContent = 'Try Again';
+          btn.disabled = false;
+          alert(data.message || 'Something went wrong. Please try again.');
+        }
+      } catch (err) {
+        btn.textContent = 'Try Again';
+        btn.disabled = false;
+        alert('Connection error. Please try again.');
+      }
     });
   </script>
 
