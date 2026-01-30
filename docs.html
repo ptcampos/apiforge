@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>APIForge — API Documentation</title>
-  <meta name="description" content="Complete API reference for APIForge. Screenshot, scrape, extract, PDF, OG image, and vision APIs.">
+  <title>IronAPI — API Documentation</title>
+  <meta name="description" content="Complete API reference for IronAPI. Screenshot, scrape, extract, PDF, OG image, and vision APIs.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -35,7 +35,7 @@
       <div class="flex items-center gap-4">
         <a href="index.html" class="flex items-center gap-2">
           <span class="text-2xl">⚡</span>
-          <span class="text-xl font-bold">API<span class="gradient-text">Forge</span></span>
+          <span class="text-xl font-bold">Iron<span class="gradient-text">API</span></span>
         </a>
         <span class="text-gray-300 dark:text-gray-600">|</span>
         <span class="text-sm font-medium text-gray-500 dark:text-gray-400">Documentation</span>
@@ -91,10 +91,10 @@
       <!-- Introduction -->
       <section id="introduction" class="mb-16">
         <h1 class="text-4xl font-extrabold mb-4">API Reference</h1>
-        <p class="text-lg text-gray-500 dark:text-gray-400 mb-6">Everything you need to integrate APIForge into your application.</p>
+        <p class="text-lg text-gray-500 dark:text-gray-400 mb-6">Everything you need to integrate IronAPI into your application.</p>
         
         <div class="bg-brand-50 dark:bg-brand-900/20 border border-brand-200 dark:border-brand-800 rounded-xl p-6 mb-6">
-          <p class="text-sm text-brand-700 dark:text-brand-300"><strong>Base URL:</strong> <code class="bg-brand-100 dark:bg-brand-900/40 px-2 py-0.5 rounded text-xs">https://api.apiforge.dev</code></p>
+          <p class="text-sm text-brand-700 dark:text-brand-300"><strong>Base URL:</strong> <code class="bg-brand-100 dark:bg-brand-900/40 px-2 py-0.5 rounded text-xs">https://api.ironapi.uk</code></p>
           <p class="text-sm text-brand-700 dark:text-brand-300 mt-1">All endpoints use HTTPS. HTTP requests will be redirected.</p>
         </div>
       </section>
@@ -106,7 +106,7 @@
         
         <div class="code-block p-5 mb-4">
 <pre class="mono text-sm"><span style="color:#6c7086"># Include your API key in every request</span>
-curl https://api.apiforge.dev/v1/screenshot \
+curl https://api.ironapi.uk/v1/screenshot \
   -H <span style="color:#a6e3a1">"Authorization: Bearer YOUR_API_KEY"</span> \
   -H <span style="color:#a6e3a1">"Content-Type: application/json"</span> \
   -d <span style="color:#a6e3a1">'{"url": "https://example.com"}'</span></pre>
@@ -188,7 +188,7 @@ curl https://api.apiforge.dev/v1/screenshot \
 
         <h3 class="text-lg font-semibold mb-3">Example</h3>
         <div class="code-block p-5 mb-2">
-<pre class="mono text-sm">curl -X POST https://api.apiforge.dev/v1/screenshot \
+<pre class="mono text-sm">curl -X POST https://api.ironapi.uk/v1/screenshot \
   -H <span style="color:#a6e3a1">"Authorization: Bearer YOUR_API_KEY"</span> \
   -H <span style="color:#a6e3a1">"Content-Type: application/json"</span> \
   -d <span style="color:#a6e3a1">'{
@@ -271,7 +271,7 @@ curl https://api.apiforge.dev/v1/screenshot \
 
         <h3 class="text-lg font-semibold mb-3">Example</h3>
         <div class="code-block p-5 mb-2">
-<pre class="mono text-sm">curl -X POST https://api.apiforge.dev/v1/extract \
+<pre class="mono text-sm">curl -X POST https://api.ironapi.uk/v1/extract \
   -H <span style="color:#a6e3a1">"Authorization: Bearer YOUR_API_KEY"</span> \
   -H <span style="color:#a6e3a1">"Content-Type: application/json"</span> \
   -d <span style="color:#a6e3a1">'{
@@ -393,9 +393,9 @@ curl https://api.apiforge.dev/v1/screenshot \
         
         <h3 id="sdk-node" class="text-lg font-semibold mb-3">Node.js / TypeScript</h3>
         <div class="code-block p-5 mb-4">
-<pre class="mono text-sm"><span style="color:#89b4fa">import</span> { APIForge } <span style="color:#89b4fa">from</span> <span style="color:#a6e3a1">'apiforge'</span>;
+<pre class="mono text-sm"><span style="color:#89b4fa">import</span> { IronAPI } <span style="color:#89b4fa">from</span> <span style="color:#a6e3a1">'ironapi'</span>;
 
-<span style="color:#89b4fa">const</span> client = <span style="color:#89b4fa">new</span> <span style="color:#f9e2af">APIForge</span>(<span style="color:#a6e3a1">'YOUR_API_KEY'</span>);
+<span style="color:#89b4fa">const</span> client = <span style="color:#89b4fa">new</span> <span style="color:#f9e2af">IronAPI</span>(<span style="color:#a6e3a1">'YOUR_API_KEY'</span>);
 
 <span style="color:#6c7086">// Screenshot</span>
 <span style="color:#89b4fa">const</span> screenshot = <span style="color:#89b4fa">await</span> client.<span style="color:#f9e2af">screenshot</span>({
@@ -418,9 +418,9 @@ curl https://api.apiforge.dev/v1/screenshot \
 
         <h3 id="sdk-python" class="text-lg font-semibold mb-3 mt-8">Python</h3>
         <div class="code-block p-5 mb-4">
-<pre class="mono text-sm"><span style="color:#89b4fa">from</span> apiforge <span style="color:#89b4fa">import</span> APIForge
+<pre class="mono text-sm"><span style="color:#89b4fa">from</span> ironapi <span style="color:#89b4fa">import</span> IronAPI
 
-client = APIForge(<span style="color:#a6e3a1">"YOUR_API_KEY"</span>)
+client = IronAPI(<span style="color:#a6e3a1">"YOUR_API_KEY"</span>)
 
 <span style="color:#6c7086"># Screenshot</span>
 screenshot = client.screenshot(url=<span style="color:#a6e3a1">"https://github.com"</span>, dark_mode=<span style="color:#89b4fa">True</span>)
@@ -438,7 +438,7 @@ product = client.extract(
         <h3 id="sdk-curl" class="text-lg font-semibold mb-3 mt-8">cURL</h3>
         <div class="code-block p-5">
 <pre class="mono text-sm"><span style="color:#6c7086"># All endpoints follow the same pattern</span>
-curl -X POST https://api.apiforge.dev/v1/{endpoint} \
+curl -X POST https://api.ironapi.uk/v1/{endpoint} \
   -H <span style="color:#a6e3a1">"Authorization: Bearer YOUR_API_KEY"</span> \
   -H <span style="color:#a6e3a1">"Content-Type: application/json"</span> \
   -d <span style="color:#a6e3a1">'{ ... }'</span></pre>
